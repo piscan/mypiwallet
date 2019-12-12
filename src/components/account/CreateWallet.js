@@ -173,7 +173,7 @@ function CreateWallet(props) {
                     <Input id="helper" className="input is-small" value={password} onChange={handleChange} helper={helper} icon="lock" placeholder="Password"/>
                     <button onClick={handleClick}
                         disabled={!(password.length >= 8)}
-                        className="button is-info is-small is-fullwidth has-text-weight-bold" > Create </button>
+                        className="button is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Create </button>
 
 
                 </Container>
