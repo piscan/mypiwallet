@@ -11,7 +11,7 @@ MyPiWallet allows us to create wallet ,import wallet , use keystore and send pi 
 
 ### steps to run : 
 
-1 : git clone https://github.com/Johnsavadkuhi/mypiwallet.git  <br/>
+1 : git clone https://github.com/piscan/mypiwallet.git  <br/>
 2 : cd mypiwallet <br/>
 3 : yarn install <br/>
 4 : yarn start <br/>
