@@ -42,7 +42,7 @@ function Balance(props) {
 
                     <div className="has-text-centered download_btn_margin">
                         <button onClick={handleBalanceClick}
-                            className="button is-info is-outlined is-small is-fullwidth has-text-weight-bold" > Balance </button>
+                            className="button  is-outlined is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Balance </button>
                     </div>
 
                 </Container>
