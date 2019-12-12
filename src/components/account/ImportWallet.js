@@ -153,7 +153,7 @@ function ImportWallet(props) {
             <div className="has-text-centered download_btn_margin">
                 <button onClick={handleImport}
                 disabled={disableButton()}
-                    className="button is-info is-small is-fullwidth has-text-weight-bold" > Import </button>
+                    className="button  is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Import </button>
             </div>
 
         </Container>
