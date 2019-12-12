@@ -1,0 +1,20 @@
+@import '~bulma/bulma.sass'; 
+
+.overlapMenu{
+    position :absolute ; 
+    z-index: 1;
+    width:100% ; 
+    display: block;
+    text-align: center;
+
+}
+
+.height_copy_button{
+    height: 95px;
+}
+
+
+.download_btn_margin{
+
+    margin-top:20px ; 
+}
