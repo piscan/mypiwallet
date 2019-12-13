@@ -49,16 +49,14 @@ function Navigation() {
 
       <div id="navbarBasicExample" aria-expanded="false" className="navbar-menu " role="menu" onClick={handlMenuItemClick} >
         <div className="navbar-start"  >
+          
           <NavLink to="/" className="navbar-item">
             Home
-            </NavLink>
-          <NavLink to="/account" className="navbar-item " >
-            Account
-        </NavLink>
+          </NavLink>
 
           <NavLink to="/wallet" className="navbar-item">
             Wallet
-        </NavLink>
+          </NavLink>
 
         </div>
 
@@ -71,8 +69,8 @@ function Navigation() {
               </span>
             </div>
             <a href="https://github.com/johnsavadkuhi/mypiwallet"
-            target="_blank" rel="noopener noreferrer"
-            className="button is-light" >
+              target="_blank" rel="noopener noreferrer"
+              className="button is-light" >
 
               <span className="icon is-large">
                 <i className="fa fa-github"></i>
