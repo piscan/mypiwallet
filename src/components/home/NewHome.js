@@ -39,9 +39,10 @@ function NewHome() {
             </section>
 
             <section id="primary">
-                <h3>MyPIWallet.org</h3>
+                <h1>Mypiwallet.org</h1>
                 <p>Pchain Wallet Web base.</p>
                 <a href="/createwallet">Create Wallet!</a>
+
             </section>
 
         </main>
