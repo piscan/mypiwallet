@@ -30,7 +30,10 @@ $borders : 15px ;
     margin: 0;
 
     #bg {
-      clip-path: polygon(100% 0, 100% 73%, 0 97%, 0 97%, 0 0);
+      //clip-path: polygon(100% 0, 100% 73%, 0 97%, 0 97%, 0 0);
+      //clip-path: polygon(100% 0, 100% 89%, 48% 100%, 0 100%, 0 0);
+      clip-path: polygon(100% 0, 100% 89%, 31% 100%, 0 100%, 0 0);
+
       background-color: color(primary);
       width: 100%;
       height: 94%;
@@ -103,11 +106,11 @@ $borders : 15px ;
 
 
           }
-          h3{
+          h1{
               
               font-size : 2em ; 
               margin-top : 10px ; 
-              text-transform: uppercase ;
+              text-transform: uppercase;
               @include desktop{
                 width: 30% ;
                 font-size: 4em;
@@ -116,6 +119,10 @@ $borders : 15px ;
           }
           p{
               font-size: 1.5em ;
+              margin-top : 5px ; 
+              text-transform: capitalize ;
+              
+               
           }
           a{
               color : color(primary-dark); 
