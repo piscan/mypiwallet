@@ -17,9 +17,9 @@ function Home() {
 
     return (<>
 
-        <div className="container-fluid" style={{ margin: "15px" }}>
+        <div className="container-fluid " style={{ margin: "15px" }}>
 
-            <section className="hero is-medium is-family-code"  >
+            <section className="hero is-medium is-family-code " >
             
                 <div className="hero-body">
                 
