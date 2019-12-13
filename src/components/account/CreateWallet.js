@@ -3,6 +3,7 @@ import { Account } from '../../pweb3';
 import { Toast, Warning } from '../../popup';
 import Container from '../container';
 import Input from '../container/Input';
+import { Redirect } from 'react-router-dom';
 
 function CreateWallet(props) {
 
@@ -10,6 +11,7 @@ function CreateWallet(props) {
     const [state, setState] = useState({ address: '', privateKey: '' });
     const [password, setPassword] = useState("");
     const [helper, setHelper] = useState('Enter 8 chars as password.');
+    const [redir ,  setRedir ]= useState(false); 
 
     const handleChange = e => {
 
@@ -105,11 +107,20 @@ function CreateWallet(props) {
         setIsExec(false);
         setState({ address: '', privateKey: '' })
     }
+    const handleCloseCreateWallet = () =>{
+        setRedir(true);
+    }
+
+    if(redir) return  <Redirect to="/"/> 
 
     return (
         <>
-            {isExec ?
-                <>
+       
+           
+           { 
+               isExec ?
+                <div className="container">
+                <br/>
                     <article className="message is-light" style={props.style}>
                         <div className="message-header">
                             <code className="is-size-5 is-size-6-mobile has-text-grey-dark"> Account </code>
@@ -165,10 +176,12 @@ function CreateWallet(props) {
                         </div>
                     </article>
 
-                </>
+                </div>
 
                 :
-                <Container header="Create Wallet" style={props.style}>
+                <div className="container">
+                <br/>
+                <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
                     <Input id="helper" className="input is-small" value={password} onChange={handleChange} helper={helper} icon="lock" placeholder="Password"/>
                     <button onClick={handleClick}
@@ -177,6 +190,7 @@ function CreateWallet(props) {
 
 
                 </Container>
+                </div>
 
             }
         </>
