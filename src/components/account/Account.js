@@ -34,6 +34,7 @@ const CreateWallet = loadable(() => import('./CreateWallet'),
   });
   
 function Account() {
+ 
   const [selected, setSelected] = useState("Balance");
 
   const radioChangeHandler = e => {
@@ -44,19 +45,23 @@ function Account() {
   return (<>
 
     <br />
-    <div className="container is-fluid ">
-      <div className="columns has-text-grey	">
-        <div className="column is-2">
-          <div className="box">
-            <p className="title is-5">Select a Method -> </p>
-            <RadioButton 
+    <div className="container ">
+   
+    <div className="columns">
+       
+       <div className="column  is-4">
+
+         <div className="box">
+              <RadioButton 
               changed={radioChangeHandler}
               isSelected={selected === "Balance"}
               name="answer"
               id="1"
-              label="Balance"
+              label=" Balance"
               value="Balance"
             />
+            </div>
+            <div className="box ">
             <RadioButton
               name="answer"
               changed={radioChangeHandler}
@@ -65,6 +70,8 @@ function Account() {
               label="Create Wallet"
               value="CreateWallet"
             />
+            </div>
+            <div className="box">
             <RadioButton
               name="answer"
               changed={radioChangeHandler}
@@ -73,19 +80,12 @@ function Account() {
               label="Import Wallet"
               value="ImportWallet"
             />
+            </div>
+            </div>
 
-            {/* <RadioButton
-              name="answer"
-              changed={radioChangeHandler}
-              isSelected={selected === "FullBalance"}
-              id="2"
-              label="Full Balance"
-              value="FullBalance"
-            /> */}
-          </div>
+    </div>
 
-
-        </div>
+      {/* <div className="columns has-text-grey	">
         <div className="column is-10">
 
           {
@@ -103,14 +103,10 @@ function Account() {
             <ImportWallet  style={style} />
 
           }
-          {/* 
-          {
-            selected === "FullBalance" && <Mthreeparam header="getFullBalance" request={GET_FULL_BALANCE} placeholder="Address" placeholdertwo="Block Number"
-              placeholderthree="Full Proxied" />
-          } */}
+          
 
         </div>
-      </div>
+      </div> */}
     </div>
 
   </>)
