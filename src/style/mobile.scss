@@ -52,6 +52,15 @@ $borders : 15px ;
     }
   }
   main {
+
+    @include desktop{
+      display: grid;
+      grid-template-columns: 50% auto ;
+      grid-template-areas: 
+      "primary card ";
+
+    }
+
       section#card{
           background : #fff ; 
           padding : 20px ; 
@@ -59,7 +68,7 @@ $borders : 15px ;
           border-radius: $borders ;
           box-shadow: 0 10px 30px rgba(0, 0 ,0 ,.2);
           width: 80% ; 
-
+         
           ul{
               list-style-type:  none ;
               margin : 0 ; 
