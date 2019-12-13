@@ -20,7 +20,7 @@ function OldHome() {
         <div id="bg" ></div>
 
         <main>
-            <section className="box" id="card">
+            <section className="box" id="card" style={style}>
                 <ul>
                     <li>
                         <span></span>
