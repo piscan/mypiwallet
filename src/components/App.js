@@ -1,7 +1,6 @@
 import React from 'react';
 import '../style/main.scss'
 import Navigation from './navigation';
-import Account from './account/Account';
 import Wallet from './wallet'; 
 import Home from './home/NewHome'; 
 import CreateWallet from './account/CreateWallet';
