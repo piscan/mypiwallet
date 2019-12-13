@@ -46,7 +46,7 @@ $borders : 15px ;
       z-index: -1;
 
       @include desktop{
-        clip-path: polygon(0 0, 74% 1%, 53% 100%, 0% 100%);
+        clip-path: polygon(0 0, 74% 0, 53% 100%, 0% 100%);
 
       }
     }
@@ -60,7 +60,6 @@ $borders : 15px ;
       "primary card ";
 
     }
-
       section#card{
           background : #fff ; 
           padding : 20px ; 
@@ -71,8 +70,10 @@ $borders : 15px ;
           @include desktop{
             grid-area: card ;
             height: fit-content;
-            align-self: center ;
-            margin : 1em ; 
+            width : 85%; 
+            align-self: right  ;
+            margin-top : 15em ;
+            margin-right : 6em ; 
             
           }
           ul{
@@ -103,12 +104,23 @@ $borders : 15px ;
           color :#fff ; 
           padding : $padding ; 
           text-align: center ; 
+          @include desktop{
+            grid-area: primary ;
+            text-align: left ;
+            margin : 4em 0 0 4em ; 
 
+
+          }
           h3{
               
               font-size : 2em ; 
               margin-top : 10px ; 
               text-transform: uppercase ;
+              @include desktop{
+                width: 30% ;
+                font-size: 4em;
+                line-height: .9em ;
+              }
           }
           p{
               font-size: 1.5em ;
@@ -124,6 +136,13 @@ $borders : 15px ;
               text-align: center;
               margin : 50px auto 0 auto ; 
               padding: $padding;
+
+              @include desktop{
+                display: inline-block;
+                padding: $padding $padding * 4 ; 
+
+
+              }
 
           }
       }
