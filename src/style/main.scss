@@ -1,4 +1,5 @@
 @import '~bulma/bulma.sass'; 
+@import 'mobile.scss'; 
 
 .overlapMenu{
     position :absolute ; 
@@ -13,11 +14,21 @@
     height: 95px;
 }
 
-
 .download_btn_margin{
 
     margin-top:20px ; 
 }
+
 .gradientBlue{
-   background-image: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%); 
+   background: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%); 
+}
+
+.gradientBlueColor{
+    color: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%); 
+ }
+
+.hr{
+
+    background: linear-gradient(45deg, #21CBF3 30%,#2196F3  90%); 
+    
 }
