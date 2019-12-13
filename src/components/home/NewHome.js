@@ -1,19 +1,13 @@
 import React from 'react';
 // import { AnimateOnChange } from 'react-animation'
-import { animations, easings } from 'react-animation'
-import { NavLink } from 'react-router-dom';
+import { animations } from 'react-animation'
+
 
 const style = {
-    animation: `pop-in ${easings.easeOutExpo} 500ms forwards`
-}
-const style1 = {
-    animation: `pop-in ${easings.easeOutExpo} 500ms forwards`
-}
-const style2 = {
     animation: animations.popIn
 }
 
-function OldHome() {
+function NewHome() {
 
     return (<>
 
@@ -25,13 +19,16 @@ function OldHome() {
                     <li>
                         <span></span>
                         
-                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified"><strong>Create Wallet </strong> You can generate a pchain wallet easily with this web app . 
+                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified">
+                            <strong>Create Wallet </strong> You can generate a pchain wallet easily with this web app . 
                           </p>
                         
                     </li>
                     <li>
                         <span></span>
-                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified"> <strong> Import Wallet  </strong> You can Import Wallet to get the your wallet information and send pi to others. </p>
+                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified"> 
+                        <strong> Import Wallet  </strong> You can Import Wallet to get the your wallet information and send pi to others.
+                         </p>
                 
                     </li>
                 </ul>
@@ -48,5 +45,5 @@ function OldHome() {
     </>)
 }
 
-export default OldHome;
+export default NewHome;
 
