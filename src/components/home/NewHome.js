@@ -25,9 +25,14 @@ function NewHome() {
                     </li>
                     <li>
                         <span></span>
-                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified">
-                            <strong> Import A Wallet  </strong><br /> You can import wallet to get the your wallet information and send pi to others.
-                         </p>
+                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-left ">
+                            <strong> Import A Wallet  </strong><br /> 
+                            You can import your wallet in two ways, 
+                            either with privateKey or kestore file and then 
+                            it shows you the wallet information and also you can send 
+                            PI to others. 
+                             
+                        </p>
 
                     </li>
                 </ul>
