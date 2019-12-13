@@ -26,7 +26,7 @@ function NewHome() {
                     <li>
                         <span></span>
                         <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified">
-                            <strong> Import Wallet  </strong><br /> You can import wallet to get the your wallet information and send pi to others.
+                            <strong> Import A Wallet  </strong><br /> You can import wallet to get the your wallet information and send pi to others.
                          </p>
 
                     </li>
