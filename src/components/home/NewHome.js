@@ -20,17 +20,19 @@ function OldHome() {
         <div id="bg" ></div>
 
         <main>
-            <section id="card">
+            <section className="box" id="card">
                 <ul>
                     <li>
                         <span></span>
-                        <strong>Create Wallet </strong>
+                        
+                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified"><strong>Create Wallet </strong> You can generate a pchain wallet easily with this web app . 
+                          </p>
                         
                     </li>
                     <li>
                         <span></span>
-                        <strong>Import Wallet </strong>
-                        
+                        <p className="has-text-black is-size-5 is-size-7-mobile has-text-justified"> <strong> Import Wallet  </strong> You can Import Wallet to get the your wallet information and send pi to others. </p>
+                
                     </li>
                 </ul>
             </section>
