@@ -1,0 +1,151 @@
+
+
+$colors: (
+  primary: #005dff,
+  $primary-light : lighten(#005DFF , 40%) ,
+  $primary-dark : darken(#005DFF , 40%) ,
+  accent: #fff6bb
+);
+
+@function color($color_name) {
+  @return map-get($colors, $color_name);
+}
+
+$desktop : 840px  ;
+@mixin  desktop {
+  @media (min-width :#{$desktop}) {
+    @content
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+$padding : 15px ;
+$borders : 15px ; 
+
+  body {
+    font-family: "Montserrat";
+    margin: 0;
+
+    #bg {
+       // clip-path: polygon(100% 0, 100% 61%, 32% 100%, 0 100%, 0 0);
+       //clip-path: polygon(100% 0, 100% 61%, 0 100%, 0 100%, 0 0);
+       clip-path: polygon(100% 0, 100% 73%, 0 97%, 0 97%, 0 0);
+       
+       //clip-path: polygon(100% 0, 100% 76%, 34% 100%, 0 100%, 0 0);
+      //clip-path: polygon(50% 0%, 100% 0, 86% 44%, 100% 100%, 95% 100%, 50% 100%, 20% 100%, 0 100%, 0% 35%, 0 0);
+      //clip-path: polygon(50% 0%, 100% 0, 100% 30%, 45% 80%, 74% 100%, 50% 100%, 24% 100%, 0 100%, 0% 35%, 0 0);
+   
+
+      background-color: color(primary);
+      width: 100%;
+      height: 94%;
+      position: absolute;
+      z-index: -1;
+
+      @include desktop{
+        clip-path: polygon(0 0, 74% 0, 53% 100%, 0% 100%);
+
+      }
+    }
+  }
+  main {
+
+    @include desktop{
+      display: grid;
+      grid-template-columns: 50% auto ;
+      grid-template-areas: 
+      "primary card ";
+
+    }
+      section#card{
+          background : #fff ; 
+          padding : 20px ; 
+          margin : 1em auto ; 
+          border-radius: $borders ;
+          box-shadow: 0 10px 30px rgba(0, 0 ,0 ,.2);
+          width: 80% ; 
+          @include desktop{
+            grid-area: card ;
+            height: fit-content;
+            width : 85%; 
+            align-self: right  ;
+            margin-top : 15em ;
+            margin-right : 6em ; 
+            
+          }
+          ul{
+              list-style-type:  none ;
+              margin : 0 ; 
+              padding : 0 ; 
+              
+              li{
+                  margin-bottom: 10px ;
+                  span{
+                      position: absolute;
+                      width :30px ; 
+                      height: 30px ;
+                      background-color : color(primary-light);
+                      border-radius:  50% ;
+                      margin-right: 10px ;
+                  }
+                  strong {
+                      display: inline-block ;
+                      margin-left: max (40px);
+                      margin-top : 10px ; 
+                  }
+              }
+          }
+
+      }
+      section#primary{
+          color :#fff ; 
+          padding : $padding ; 
+          text-align: center ; 
+          @include desktop{
+            grid-area: primary ;
+            text-align: left ;
+            margin : 4em 0 0 4em ; 
+
+
+          }
+          h3{
+              
+              font-size : 2em ; 
+              margin-top : 10px ; 
+              text-transform: uppercase ;
+              @include desktop{
+                width: 30% ;
+                font-size: 4em;
+                line-height: .9em ;
+              }
+          }
+          p{
+              font-size: 1.5em ;
+          }
+          a{
+              color : color(primary-dark); 
+              border-radius: $borders;
+              text-decoration: none;
+              text-transform:uppercase ;
+              font-weight:  bold ;
+              background-color: color(accent);
+              display: block ;
+              text-align: center;
+              margin : 50px auto 0 auto ; 
+              padding: $padding;
+
+              @include desktop{
+                display: inline-block;
+                padding: $padding $padding * 4 ; 
+
+
+              }
+
+          }
+      }
+  }
+
+
