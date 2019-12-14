@@ -7,6 +7,7 @@
     "@loadable/component": "^5.11.0",
     "apollo-boost": "^0.4.7",
     "bulma": "^0.8.0",
+    "graphql": "^14.5.8",
     "node-sass": "^4.13.0",
     "pchainjs-tx": "^1.0.8",
     "pweb3": "^1.0.0-beta.62",
