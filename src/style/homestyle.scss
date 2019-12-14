@@ -5,6 +5,7 @@ $colors: (
   $primary-light : lighten(#005DFF , 40%) ,
   $primary-dark : darken(#005DFF , 40%) ,
   accent: #fff6bb
+  
 );
 
 @function color($color_name) {
@@ -30,8 +31,7 @@ $borders : 15px ;
     margin: 0;
 
     #bg {
-      //clip-path: polygon(100% 0, 100% 73%, 0 97%, 0 97%, 0 0);
-      //clip-path: polygon(100% 0, 100% 89%, 48% 100%, 0 100%, 0 0);
+      
       clip-path: polygon(100% 0, 100% 89%, 31% 100%, 0 100%, 0 0);
       background: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%);
 
