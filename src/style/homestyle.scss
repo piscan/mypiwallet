@@ -60,7 +60,7 @@ $borders : 15px ;
           background  :white ;
           padding : 20px ; 
           margin : 1em auto ; 
-          border-radius: $borders ;
+          border-radius: $borders 50px  ;
           box-shadow: 0 10px 30px rgba(0, 0 ,0 ,.2);
           width: 80% ; 
           @include desktop{
