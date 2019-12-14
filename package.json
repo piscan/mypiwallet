@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@loadable/component": "^5.11.0",
+    "apollo-boost": "^0.4.7",
     "bulma": "^0.8.0",
     "node-sass": "^4.13.0",
     "pchainjs-tx": "^1.0.8",
