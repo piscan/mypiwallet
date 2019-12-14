@@ -1,31 +1,14 @@
 import React from 'react';
 // import { AnimateOnChange } from 'react-animation'
 import { animations } from 'react-animation'
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
 
-const BALANCE = gql`
-    {
-        getBalance(address:"0xEA048c9D9B3D226550bDDb6515a6425153474D8b")
-    }
-`
+
 
 const style = {
     animation: animations.popIn
 };
 
 function NewHome() {
-
-    const { loading, error, data } = useQuery(BALANCE);
-
-    console.log("loading : ", loading ); 
-    if(error){
-        console.log(error);
-        throw new Error(error);
-
-    }else {
-        console.log(data); 
-    }
 
     return (<>
 
@@ -59,7 +42,7 @@ function NewHome() {
                 </ul>
             </section>
 
-            <section id="primary">
+            <section id="primary" style={style}>
                 <h1>MyPiWallet.org</h1>
                 <p>Pchain Wallet Web base.</p>
                 <a href="/createwallet">Create Wallet!</a>
