@@ -12,7 +12,7 @@ $colors: (
   @return map-get($colors, $color_name);
 }
 
-$desktop : 840px  ;
+$desktop : 960px  ;
 @mixin  desktop {
   @media (min-width :#{$desktop}) {
     @content
