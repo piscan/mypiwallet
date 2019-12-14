@@ -1,3 +1,4 @@
+import { gql } from 'apollo-boost';
 
 export const GET_BLOCK_NUMBER = {
     query: `
@@ -103,9 +104,13 @@ export const GET_BALANCE = function (input) {
         
         `
     }
-}
+};
 
-export const GET_TRANSACTION_RECEIPT = function (input) {
+
+
+
+
+    export const GET_TRANSACTION_RECEIPT = function (input) {
     return {
         query: `
 

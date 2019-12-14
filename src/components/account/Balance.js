@@ -3,8 +3,30 @@ import Container from '../container';
 import Input from '../container/Input';
 import Fetch from '../../request/Fetch';
 import { GET_BALANCE } from '../../request';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+
+const BALANCE = gql`
+    {
+        getBalance(address:'0xlkjslkjdkfj')
+    }
+ `
+
+// export function getBalance (input ){
+//     return (
+//     gql`
+//
+//         {
+//             getBalance(address:"${input}")
+//
+//         }
+//
+//     `);
+// }
+
 
 function Balance(props) {
+
 
     const [address, setAddress] = useState('');
     const [data, setData] = useState({});
