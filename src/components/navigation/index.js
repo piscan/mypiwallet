@@ -68,7 +68,7 @@ function Navigation() {
                 English
               </span>
             </div>
-            <a href="https://github.com/johnsavadkuhi/mypiwallet"
+            <a href="https://github.com/piscan/mypiwallet"
               target="_blank" rel="noopener noreferrer"
               className="button is-light" >
 
