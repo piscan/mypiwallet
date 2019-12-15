@@ -157,42 +157,68 @@ function Send(props) {
 
         setSelected('sending');
 
-        const { address } = JSON.parse(localStorage.getItem(props.name));
+        try {
 
-        const { data } = await Fetch(GET_TRANSACTION_COUNT(address));
+            const { address } = JSON.parse(localStorage.getItem(props.name));
 
-        const { privateKey } = Account.decrypt(JSON.parse(localStorage.getItem(props.name)).privateKey, password);
+            const { data } = await Fetch(GET_TRANSACTION_COUNT(address));
 
-        const p = privateKey.slice(2).toString();
 
-        const privateKey1 = Buffer.from(p, 'hex');
+            const { privateKey } = Account.decrypt(JSON.parse(localStorage.getItem(props.name)).privateKey, password);
+            console.log("privateKey in line 165 : ", privateKey);
+            const p = privateKey.slice(2).toString();
 
-        const rawTx = {
-            nonce: (data.getTransactionCount),
-            gasPrice: '0x3B9ACA00',
-            gasLimit: '0xA410',
-            to: to,
-            value: '0x' + (Number.parseFloat(piValue) * 1000000000000000000).toString(16),
-            data: '',
-            chainId: 'pchain'
-        };
+            const privateKey1 = Buffer.from(p, 'hex');
 
-        const tx = new Tx(rawTx);
-        tx.sign(privateKey1);
-        const serializedTx = await tx.serialize();
-        const s = '0x' + serializedTx.toString('hex');
-        setSigned(s);
-        setSelected('signedTransaction');
+            const rawTx = {
+                nonce: (data.getTransactionCount),
+                gasPrice: '0x3B9ACA00',
+                gasLimit: '0xA410',
+                to: to,
+                value: '0x' + (Number.parseFloat(piValue) * 1000000000000000000).toString(16),
+                data: '',
+                chainId: 'pchain'
+            };
+
+            const tx = new Tx(rawTx);
+            tx.sign(privateKey1);
+            const serializedTx = await tx.serialize();
+            const s = '0x' + serializedTx.toString('hex');
+            setSigned(s);
+            setSelected('signedTransaction');
+        }
+        catch (error) {
+            if (error.message === "Key derivation failed - possibly wrong password")
+                Swal.fire({
+                    title: "Wrong Password ",
+                    text: "The password is not invalid ",
+                    icon: 'error',
+                    showConfirmButton: true,
+                    confirmButtonText: "Ok ",
+                    confirmButtonColor: "red"
+
+                }).then(() => {
+                    setSelected('passwordForm');
+                    setPassword(''); 
+                    setPassHelper('password can not be empty!'); 
+                    document.getElementById('passwordHelper').classList.add('is-danger');
+                    document.getElementById('passwordForm').classList.add('is-danger');
+        
+                    
+                })
+
+        }
+
     }
 
     const handleSendClick = () => {
 
         const beforSending = Swal.mixin({
             customClass: {
-                
-                title : ''
+
+                title: ''
             },
-            
+
         })
 
 
@@ -205,12 +231,12 @@ function Send(props) {
             cancelButtonText: 'Cancerl',
             confirmButtonText: 'Agree',
 
-        }).then(async ()=>{
-            
-            setSelected('sending'); 
+        }).then(async () => {
+
+            setSelected('sending');
             const transactionHash = await Fetch(SEND_RAW_TRANSACTION(signed))
 
-             setTs(transactionHash);
+            setTs(transactionHash);
 
             Swal.fire({
                 title: 'Sent Successfully!',
@@ -223,10 +249,10 @@ function Send(props) {
 
             setSelected('transactionSent');
 
-        }); 
+        });
 
-    
-        
+
+
     }
 
     return (<>
