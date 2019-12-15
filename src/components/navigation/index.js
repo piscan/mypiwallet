@@ -57,6 +57,9 @@ function Navigation() {
           <NavLink to="/wallet" className="navbar-item">
             Wallet
           </NavLink>
+          <NavLink to="/explorer" className="navbar-item">
+            Explorer 
+          </NavLink>
 
         </div>
 
