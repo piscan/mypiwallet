@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 import ImportWallet from "../account/ImportWallet";
 import CreateWallet from "../account/CreateWallet";
+import BlockNumber from './../explorer/block/BlockNumber'; 
+
 
 function Router() {
 
@@ -27,6 +29,7 @@ function Router() {
                 <Route path="/wallet" component={Wallet}/>
                 <Route path="/createwallet" component={CreateWallet}/>
                 <Route path="/importwallet" component={ImportWallet} />
+                <Route path="/explorer"component = {BlockNumber} />
 
             </Switch>
 
