@@ -1,7 +1,7 @@
 @import '~bulma/bulma.sass'; 
 @import 'homestyle.scss';
 @import 'blocknumber.scss'; 
-
+@import 'createwallet.scss';
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 .overlapMenu{
@@ -33,3 +33,4 @@
     background: linear-gradient(45deg, #21CBF3 30%,#2196F3  90%); 
     
 }
+
