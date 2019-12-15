@@ -4,6 +4,7 @@ import { Toast, Warning } from '../../popup';
 import Container from '../container';
 import Input from '../container/Input';
 import { Redirect } from 'react-router-dom';
+import Password from '../container/input/Password';
 
 function CreateWallet(props) {
 
@@ -177,14 +178,20 @@ function CreateWallet(props) {
     return <>
         <div className="container">
             <br />
+            
+
+
+          
+
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
-                <Input id="helper" className="input is-small" value={password} onChange={handleChange} helper={helper} icon="lock" placeholder="Password" />
+                {/* <Input id="helper" className="input is-small" value={password} onChange={handleChange} helper={helper} icon="lock" placeholder="Password" />
                 <button onClick={handleClick}
                     disabled={!(password.length >= 8)}
-                    className="button is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Create </button>
-
-
+                    className="button is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Create </button> */}
+                    <Password label="Password"/>
+                    
+                  
             </Container>
         </div></>
 
