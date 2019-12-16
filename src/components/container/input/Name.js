@@ -6,22 +6,23 @@ import InfoIcon from '@material-ui/icons/Info';
 import styled from 'styled-components';
 import Swal from 'sweetalert2';
 import FormHelperText from '@material-ui/core/FormHelperText';
-
+//#74E8E6
 const StyledTextField = styled(TextField)`
  
 label.Mui-focused {
-    color: black;
+    color: #425FEB;
   }
   .MuiOutlinedInput-root {
     fieldset {
       border-color: white;
     }
     &:hover fieldset {
-      border : .5px solid #8CFFDD ; 
+      border : .5px solid #CCD9E8 ; 
     }
     &.Mui-focused fieldset {
       
-      border : .5px solid #74E8E6 ; 
+      border : .5px solid #425FEB ; 
+      border-left :6px solid #425FEB;
     }
   }
 `;
