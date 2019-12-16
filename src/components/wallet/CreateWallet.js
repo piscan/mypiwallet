@@ -2,17 +2,39 @@ import React, { useState } from 'react';
 import { Account } from '../../pweb3';
 import { Toast, Warning } from '../../popup';
 import Container from '../container';
-import Input from '../container/Input';
 import { Redirect } from 'react-router-dom';
 import Password from '../container/input/Password';
+import Stepper from '../container/Stepper';
 
 function CreateWallet(props) {
 
     const [isExec, setIsExec] = useState(false);
     const [state, setState] = useState({ address: '', privateKey: '' });
     const [password, setPassword] = useState("");
+    const [status , setStatus ] = useState(false); 
     const [helper, setHelper] = useState('Enter 8 chars as password.');
     const [redir, setRedir] = useState(false);
+
+    const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = (e) => {
+    e.preventDefault();
+
+    setIsExec(true);
+    let { address, privateKey } = Account.create();
+    setState({ address: address, privateKey: privateKey });
+
+    setActiveStep(prevActiveStep => prevActiveStep + 1);
+   
+  };
+
+  const handleBack = () => {
+   
+    setIsExec(false);
+    setState({ address: '', privateKey: '' })
+    setActiveStep(prevActiveStep => prevActiveStep - 1);
+
+  };
 
     const handleChange = e => {
 
@@ -20,31 +42,23 @@ function CreateWallet(props) {
 
         if (e.target.value.length === 0) {
             setHelper('password can not be empty.');
-            document.getElementById("helper").classList.add('is-danger');
+            setStatus(true); 
 
 
         } else if (e.target.value.length < 8) {
             setHelper('the password length is less than 8 chars.');
-            document.getElementById("helper").classList.add('is-danger');
+            setStatus(true); 
 
 
         } else {
 
-            document.getElementById("helper").classList.remove('is-danger');
-            document.getElementById("helper").classList.add('is-success');
-            setHelper('ok !!!');
+            setHelper('Ok!');
+            setStatus(false); 
 
         }
 
     }
-    const handleClick = e => {
-        e.preventDefault();
 
-        setIsExec(true);
-        let { address, privateKey } = Account.create();
-        setState({ address: address, privateKey: privateKey });
-
-    }
 
     const handleCopyAddress = () => {
 
@@ -87,14 +101,10 @@ function CreateWallet(props) {
                 const encryptedPrivatedKey = JSON.stringify(Account.encrypt(state.privateKey, password));
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(encryptedPrivatedKey));
                 element.setAttribute('download', state.address);
-
                 element.style.display = 'none';
                 document.body.appendChild(element);
-
                 element.click();
-
                 document.body.removeChild(element);
-
                 Toast.fire({
                     icon: 'success',
                     title: 'Downloaded'
@@ -107,18 +117,22 @@ function CreateWallet(props) {
     const handleClose = () => {
         setIsExec(false);
         setState({ address: '', privateKey: '' })
+        setActiveStep(prevActiveStep => prevActiveStep - 1);
+
     }
     const handleCloseCreateWallet = () => {
+
         setRedir(true);
+        
     }
 
     if (redir) return <Redirect to="/" />
 
     if (isExec) return <div className="container">
         <br />
-        <article className="box is-light" style={props.style}>
-            <div className="message-header">
-                <code className="is-size-5 is-size-6-mobile has-text-grey-dark"> Account </code>
+        <article className="message  cw_card box" style={props.style}>
+            <div className="message-header gradientBlue cw_card_header">
+                <p className="is-size-5 is-size-6-mobile has-text-white"> Account </p>
                 <button className="delete" aria-label="delete" onClick={handleClose}></button>
             </div>
             <div className="message-body">
@@ -152,8 +166,8 @@ function CreateWallet(props) {
                 </fieldset>
 
                 <div className="has-text-centered download_btn_margin">
-                    <div className="field">
-                        <div className="file is-light has-name is-boxed is-fullwidth" onClick={handleDownloadClick}>
+                    <div className="field ">
+                        <div className="file has-name is-boxed is-fullwidth" onClick={handleDownloadClick}>
                             <label className="file-label">
                                 <input className="file-input " type="text" readOnly={true} name="resume" />
                                 <span className="file-cta">
@@ -170,30 +184,32 @@ function CreateWallet(props) {
                 </div>
             </div>
         </article>
+        <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2}/>
 
     </div>
-
 
 
     return <>
         <div className="container">
             <br />
-            
-
-
-          
-
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
-                {/* <Input id="helper" className="input is-small" value={password} onChange={handleChange} helper={helper} icon="lock" placeholder="Password" />
-                <button onClick={handleClick}
-                    disabled={!(password.length >= 8)}
-                    className="button is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Create </button> */}
-                    <Password label="Password"/>
-                    
-                  
+                <br />
+                
+                <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status}  />
+                
+                <br />
+                
+               
             </Container>
+            <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2}/>
         </div></>
+
+    
+    
+   
+    
+    
 
 }
 
