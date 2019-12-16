@@ -10,7 +10,7 @@ import {
     Route,
 
 } from "react-router-dom";
-import ImportWallet from "../account/ImportWallet";
+import ImportWallet from "../wallet/ImportWallet";
 import CreateWallet from "../wallet/CreateWallet";
 import BlockNumber from './../explorer/block/BlockNumber'; 
 
