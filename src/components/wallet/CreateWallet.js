@@ -14,7 +14,6 @@ function CreateWallet(props) {
     const [status , setStatus ] = useState(false); 
     const [helper, setHelper] = useState('');
     const [redir, setRedir] = useState(false);
-
     const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = (e) => {
