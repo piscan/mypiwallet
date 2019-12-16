@@ -195,7 +195,7 @@ function CreateWallet(props) {
 
                 <br />
                 <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status}  />
-                <br />
+                
                 <div style={{marginLeft: '25px'}}>
                 <ol >
                     <li>Enter 8 chars for password.</li>
