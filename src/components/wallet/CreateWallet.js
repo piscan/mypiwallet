@@ -11,29 +11,29 @@ function CreateWallet(props) {
     const [isExec, setIsExec] = useState(false);
     const [state, setState] = useState({ address: '', privateKey: '' });
     const [password, setPassword] = useState("");
-    const [status , setStatus ] = useState(false); 
+    const [status, setStatus] = useState(false);
     const [helper, setHelper] = useState('');
     const [redir, setRedir] = useState(false);
     const [activeStep, setActiveStep] = React.useState(0);
 
-  const handleNext = (e) => {
-    e.preventDefault();
+    const handleNext = (e) => {
+        e.preventDefault();
 
-    setIsExec(true);
-    let { address, privateKey } = Account.create();
-    setState({ address: address, privateKey: privateKey });
+        setIsExec(true);
+        let { address, privateKey } = Account.create();
+        setState({ address: address, privateKey: privateKey });
 
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-   
-  };
+        setActiveStep(prevActiveStep => prevActiveStep + 1);
 
-  const handleBack = () => {
-   
-    setIsExec(false);
-    setState({ address: '', privateKey: '' })
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+    };
 
-  };
+    const handleBack = () => {
+
+        setIsExec(false);
+        setState({ address: '', privateKey: '' })
+        setActiveStep(prevActiveStep => prevActiveStep - 1);
+
+    };
 
     const handleChange = e => {
 
@@ -41,18 +41,18 @@ function CreateWallet(props) {
 
         if (e.target.value.length === 0) {
             setHelper('password can not be empty.');
-            setStatus(true); 
+            setStatus(true);
 
 
         } else if (e.target.value.length < 8) {
             setHelper('the password length is less than 8 chars.');
-            setStatus(true); 
+            setStatus(true);
 
 
         } else {
 
             setHelper('Ok!');
-            setStatus(false); 
+            setStatus(false);
 
         }
 
@@ -122,7 +122,7 @@ function CreateWallet(props) {
     const handleCloseCreateWallet = () => {
 
         setRedir(true);
-        
+
     }
 
     if (redir) return <Redirect to="/" />
@@ -183,7 +183,7 @@ function CreateWallet(props) {
                 </div>
             </div>
         </article>
-        <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2}/>
+        <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} />
 
     </div>
 
@@ -194,32 +194,34 @@ function CreateWallet(props) {
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
                 <br />
-                <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status}  />
-                
-                <div style={{marginLeft: '25px'}}>
-                <ol >
-                    <li>Enter 8 chars for password.</li>
-                    <li>
-                        Keep safe your password. 
+                <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status} />
+
+                <div style={{ marginLeft: '25px' }}>
+                    <ol >
+                        <li>
+                            <small> Enter 8 chars for password.</small>
+                        </li>
+                        <li>
+                            <small>Keep safe your password.</small>
+                        </li>
+                        <li>
+                            <small>We can not recover it.</small>
                     </li>
-                    <li>
-                        We can not recover it.  
-                    </li>                    
-                </ol>
+                    </ol>
                 </div>
-               
-               
+
+
             </Container>
 
-            <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} status ={password.length >= 8 }/>
-        
+            <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} status={password.length >= 8} />
+
         </div></>
 
-    
-    
-   
-    
-    
+
+
+
+
+
 
 }
 
