@@ -56,8 +56,9 @@ export default function Textarea(props) {
         variant="outlined"
         value={props.value}
         onChange={props.onChange}
-        fullWidth        
-       
+        fullWidth 
+        multiline
+        rows={4}
       />
 
       <FormHelperText error={props.error} >{props.helper}</FormHelperText>
