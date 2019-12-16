@@ -48,12 +48,11 @@ export default function Password(props) {
     <div >
 
       <StyledTextField
+      style={{background:'white'}}
         required
         size="small"
         label={props.label}
         type={values.showPassword ? 'text' : 'password'}
-        id="standard-start-adornment"
-        className="input"
         variant="outlined"
         value={props.value}
         onChange={props.onChange}
@@ -63,8 +62,7 @@ export default function Password(props) {
             <IconButton
               aria-label="toggle password visibility"
               onClick={handleClickShowPassword}
-              onMouseDown={handleMouseDownPassword}
-            >
+              onMouseDown={handleMouseDownPassword}>
               {values.showPassword ? <Visibility /> : <VisibilityOff />}
             </IconButton>
           </InputAdornment>
