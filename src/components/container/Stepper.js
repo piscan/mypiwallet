@@ -26,7 +26,7 @@ export default function Stepper(props) {
       activeStep={props.activeStep}
       className={classes.root}
       nextButton={
-        <Button size="small" onClick={props.onNextClick} disabled={props.activeStep === props.steps-1}>
+        <Button size="small" onClick={props.onNextClick} disabled={props.activeStep === props.steps-1 || !props.status} >
           Next
           {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
         </Button>
