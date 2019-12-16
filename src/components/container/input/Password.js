@@ -48,6 +48,7 @@ export default function Password(props) {
     <div >
 
       <StyledTextField
+        required
         size="small"
         label={props.label}
         type={values.showPassword ? 'text' : 'password'}
