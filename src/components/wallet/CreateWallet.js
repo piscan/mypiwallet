@@ -195,11 +195,8 @@ function CreateWallet(props) {
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
                 <br />
-                
                 <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status}  />
-                
                 <br />
-                
                 <div style={{marginLeft: '25px'}}>
                 <ol >
                     <li>
@@ -207,8 +204,7 @@ function CreateWallet(props) {
                     </li>
                     <li>
                         We can not recover it.  
-                    </li>
-                    
+                    </li>                    
                 </ol>
                 </div>
                
