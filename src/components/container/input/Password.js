@@ -1,6 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
@@ -12,18 +10,19 @@ import styled from 'styled-components';
 const StyledTextField = styled(TextField)`
  
 label.Mui-focused {
-    color: black;
+    color: #425FEB;
   }
   .MuiOutlinedInput-root {
     fieldset {
       border-color: white;
     }
     &:hover fieldset {
-      border : .5px solid #8CFFDD ; 
+      border : .5px solid #CCD9E8 ; 
     }
     &.Mui-focused fieldset {
       
-      border : .5px solid #74E8E6 ; 
+      border : .5px solid #425FEB ; 
+      border-left :6px solid #425FEB;
     }
   }
 `;
@@ -48,7 +47,7 @@ export default function Password(props) {
     <div >
 
       <StyledTextField
-      style={{background:'white'}}
+        style={{ background: 'white' }}
         required
         size="small"
         label={props.label}
@@ -56,7 +55,7 @@ export default function Password(props) {
         variant="outlined"
         value={props.value}
         onChange={props.onChange}
-        fullWidth        
+        fullWidth
         InputProps={{
           endAdornment: <InputAdornment position="end">
             <IconButton
