@@ -11,7 +11,7 @@ import {
 
 } from "react-router-dom";
 import ImportWallet from "../account/ImportWallet";
-import CreateWallet from "../account/CreateWallet";
+import CreateWallet from "../wallet/CreateWallet";
 import BlockNumber from './../explorer/block/BlockNumber'; 
 
 
