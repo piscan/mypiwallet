@@ -202,7 +202,9 @@ function CreateWallet(props) {
                 
                
             </Container>
-            <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2}/>
+            
+            <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} status ={password.length >= 8 }/>
+        
         </div></>
 
     
