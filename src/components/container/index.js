@@ -1,26 +1,21 @@
-import React from 'react'; 
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
-function Container(props){
+
+function Container(props) {
 
     return (<>
+        <article className="message cw_card box " style={props.style}>
+            <div className="message-header gradientBlue cw_card_header">
+                <p className=""> {props.header} </p>
+                {props.close}
+            </div>
+            <div className="message-body">
+                {props.children}
+            </div>
+        </article>
 
-    <article className="message is-light" style={props.style}>
-                <div className="message-header">
-                    <code className="has-text-weight-semibold has-text-black-bis is-size-5 is-size-6-mobile"> {props.header} </code> 
-                    {props.close}
-                </div>
-                <div className="message-body">
-
-                    <fieldset >
-                       
-                     {props.children}
-
-                    </fieldset> 
-                   
-                </div>
-            </article>
-    
-    </>); 
+    </>);
 
 }
 
