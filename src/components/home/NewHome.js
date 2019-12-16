@@ -46,7 +46,7 @@ function NewHome() {
                 <h1>MyPiWallet.org</h1>
                 <p>Pchain Wallet Web base.</p>
                 <a href="/createwallet">Create Wallet!</a>
-
+                <a href="/importwallet" >Import Wallet!</a>
             </section>
 
         </main>
