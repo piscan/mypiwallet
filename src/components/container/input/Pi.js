@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function Input() {
+export default function Pi(props) {
 
     const classes = useStyles();
 
