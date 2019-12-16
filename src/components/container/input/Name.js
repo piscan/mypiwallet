@@ -53,7 +53,6 @@ export default function Name(props) {
         size="small"
         label={props.label}
         type='text'
-        className="input"
         variant="outlined"
         value={props.value}
         onChange={props.onChange}
