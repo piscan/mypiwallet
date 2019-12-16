@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Container from '../container';
-import Textarea from '../container/Textarea';
+import Textarea from '../container/input/Textarea';
 import { Account } from '../../pweb3';
 import Swal from 'sweetalert2';
 import { Redirect } from 'react-router-dom';
@@ -153,7 +153,7 @@ if (redir) return <Redirect to="/" />
             <Password value={password} onChange={handleChangePassword} status={passwordError.state} helper={passwordError.helper} 
              label="Password" />
 
-            <Textarea value={privateKey} onChange={handleChangePrivateKey} helper={helper1} />
+            <Textarea value={privateKey} onChange={handleChangePrivateKey} label ="PrivateKey" />
 
             <div className="has-text-centered download_btn_margin">
                 <button onClick={handleImport}
