@@ -12,7 +12,7 @@ function CreateWallet(props) {
     const [state, setState] = useState({ address: '', privateKey: '' });
     const [password, setPassword] = useState("");
     const [status , setStatus ] = useState(false); 
-    const [helper, setHelper] = useState('Enter 8 chars as password.');
+    const [helper, setHelper] = useState('');
     const [redir, setRedir] = useState(false);
 
     const [activeStep, setActiveStep] = React.useState(0);
@@ -199,6 +199,7 @@ function CreateWallet(props) {
                 <br />
                 <div style={{marginLeft: '25px'}}>
                 <ol >
+                    <li>Enter 8 chars for password.</li>
                     <li>
                         Keep safe your password. 
                     </li>
