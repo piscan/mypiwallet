@@ -23,14 +23,17 @@ $desktop : 960px  ;
 body,
 html {
   height: 100%;
+overflow: auto;
 }
 $padding : 15px ;
 $borders : 15px ; 
 
   body {
+    
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    overflow: auto ;
+    
+  
     #bg {
       
       // clip-path: polygon(100% 0, 100% 89%, 31% 100%, 0 100%, 0 0);
@@ -40,6 +43,7 @@ $borders : 15px ;
       height: 100%;
       position: absolute;
       z-index: -1;
+      overflow: auto ;
       @include desktop{
         clip-path: polygon(0 0, 74% 0, 53% 100%, 0% 100%);
 
