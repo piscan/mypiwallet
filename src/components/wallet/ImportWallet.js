@@ -144,7 +144,7 @@ if (redir) return <Redirect to="/" />
 
     return (
 
-        <Container header="Import Wallet" style={props.style} style={{margin:'50px'}} 
+        <Container header="Import Wallet" style={{marginTop:'20px'}}
         close={<button onClick={handleCloseImportWallet} className="delete" aria-label="delete"></button>}>
 
     
