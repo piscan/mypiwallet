@@ -16,6 +16,9 @@ function ImportWallet(props) {
     const [helper2, setHelper2] = useState('Enter a name for Wallet');
     const [name, setName] = useState('');
     const [redir  , setRedir] = useState(false); 
+    const [nameError , setNameError ] = useState({state : false , helper : ''}); 
+    const [passwordError , setPasswordError] = useState({state : false , helper : ''}); 
+    const [pkError , setPkError] = useState({state:false , helper : ''}); 
 
     const reset =()=>{
         setPassword('') ; 
@@ -145,10 +148,10 @@ if (redir) return <Redirect to="/" />
         close={<button onClick={handleCloseImportWallet} className="delete" aria-label="delete"></button>}>
 
     
-            <Name label="Name" onChange={handleChangeName} value={name} />
+            <Name label="Name" onChange={handleChangeName} value={name} error={nameError.state} helper = {nameError.helper}/>
 
-            <Password value={password} onChange={handleChangePassword} 
-             label="Password"/>
+            <Password value={password} onChange={handleChangePassword} status={passwordError.state} helper={passwordError.helper} 
+             label="Password" />
 
             <Textarea value={privateKey} onChange={handleChangePrivateKey} helper={helper1} />
 
