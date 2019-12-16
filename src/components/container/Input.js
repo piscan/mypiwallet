@@ -2,7 +2,9 @@ import React from 'react';
 
 function Input(props){
 
-    return( <div className="field">
+    return( 
+    <div className="field">
+
     <div className="control has-icons-left">
     
         <input value={props.value}
