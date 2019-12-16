@@ -145,24 +145,12 @@ if (redir) return <Redirect to="/" />
         <Container header="Import Wallet" style={props.style} style={{margin:'50px'}} 
         close={<button onClick={handleCloseImportWallet} className="delete" aria-label="delete"></button>}>
 
-            {/* <Input className=" is-small" value={name}
-                onChange={handleChangeName}
-                helper={helper2}
-                icon="registered"
-                placeholder="Name"
-                helperId="helper2" />
-
-            <Input className=" is-small" value={password}
-                onChange={handleChangePassword}
-                helper={helper}
-                icon="lock"
-                placeholder="Password"
-                helperId="helper"
-            /> */}
-        
+    
             <Name label="Name" onChange={handleChangeName} value={name} />
+
             <Password value={password} onChange={handleChangePassword} 
              label="Password"/>
+             
             <Textarea value={privateKey} onChange={handleChangePrivateKey} helper={helper1} />
 
             <div className="has-text-centered download_btn_margin">
