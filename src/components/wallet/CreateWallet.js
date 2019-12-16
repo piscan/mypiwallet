@@ -200,9 +200,21 @@ function CreateWallet(props) {
                 
                 <br />
                 
+                <div style={{marginLeft: '25px'}}>
+                <ol >
+                    <li>
+                        Keep safe your password. 
+                    </li>
+                    <li>
+                        We can not recover it.  
+                    </li>
+                    
+                </ol>
+                </div>
+               
                
             </Container>
-            
+
             <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} status ={password.length >= 8 }/>
         
         </div></>
