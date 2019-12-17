@@ -67,23 +67,16 @@ function ImportWallet(props) {
 
         setPassword(e.target.value);
 
-        // if (e.target.value.length === 0) {
-        //     setHelper('password can not be empty.');
-        //     document.getElementById("helper").classList.add('is-danger');
+        if (e.target.value.length === 0) {
+            setPasswordError({state:true , helper:'password can not be empty.'})
 
+        } else if (e.target.value.length < 8) {
+            setPasswordError({state:true , helper:'the password length is less than 8 chars.'})
 
-        // } else if (e.target.value.length < 8) {
-        //     setHelper('the password length is less than 8 chars.');
-        //     document.getElementById("helper").classList.add('is-danger');
+        } else {
+            setPasswordError({state:false , helper:'Ok!'})
 
-
-        // } else {
-
-        //     document.getElementById("helper").classList.remove('is-danger');
-        //     document.getElementById("helper").classList.add('is-success');
-        //     setHelper('Ok!');
-
-        // }
+        }
 
     }
 
@@ -154,11 +147,12 @@ if (redir) return <Redirect to="/" />
             <Password value={password} onChange={handleChangePassword} status={passwordError.state} helper={passwordError.helper} 
              label="Password" />
 
-            <Textarea value={privateKey} onChange={handleChangePrivateKey} label ="PrivateKey" />
+            <Textarea value={privateKey} onChange={handleChangePrivateKey} label ="PrivateKey" error={pkError.state}
+             helper={pkError.helper} />
 
             <div className="has-text-centered download_btn_margin">
                 <button onClick={handleImport}
-                disabled={disableButton()}
+                
                     className="button  is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Import </button>
             </div>
 
