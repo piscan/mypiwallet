@@ -143,8 +143,9 @@ const  handleCloseImportWallet  = () =>{
 if (redir) return <Redirect to="/" />
 
     return (
-
-        <Container header="Import Wallet" style={{marginTop:'20px'}}
+        <div className="container">
+            <br/>
+        <Container header="Import Wallet" 
         close={<button onClick={handleCloseImportWallet} className="delete" aria-label="delete"></button>}>
 
     
@@ -162,6 +163,7 @@ if (redir) return <Redirect to="/" />
             </div>
 
         </Container>
+        </div>
     )
 
 }
