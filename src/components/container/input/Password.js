@@ -68,7 +68,7 @@ export default function Password(props) {
         }}
       />
 
-      <FormHelperText error={props.error} >{props.helper}</FormHelperText>
+      <FormHelperText style={{marginBottom:'10px'}} error={props.error} >{props.helper}</FormHelperText>
 
     </div>
   );
