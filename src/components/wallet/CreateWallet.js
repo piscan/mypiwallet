@@ -134,8 +134,9 @@ function CreateWallet(props) {
                 <p className="is-size-5 is-size-6-mobile has-text-white"> Account </p>
                 <button className="delete" aria-label="delete" onClick={handleClose}></button>
             </div>
-      <div className="box">  
-          
+            <br/>
+      <div className="box" style={{margin : '20px'}}>  
+
             <div className="message-body">
 
                 <fieldset >
@@ -184,9 +185,11 @@ function CreateWallet(props) {
                     </div>
                 </div>
             </div>
+     <br/>
+     <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} />
+
       </div>
         </article>
-        <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} />
 
     </div>
 
@@ -195,11 +198,10 @@ function CreateWallet(props) {
         <div className="container">
             <br />
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
-
-<div className="box"> 
+               <div className="box" style={{margin : '20px'}}> 
                 <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status} />
 
-                <div style={{ marginLeft: '25px' }}>
+                <div style={{ marginLeft: '15px' }}>
                     <ol >
                         <li>
                             <small> Enter 8 chars for password.</small>
@@ -218,16 +220,7 @@ function CreateWallet(props) {
                 </div>
 
             </Container>
-
-
         </div></>
-
-
-
-
-
-
-
 }
 
 export default CreateWallet; 
