@@ -35,7 +35,7 @@ function ImportWallet(props) {
     }
 
     const disableButton = () =>{
-        if(helper2 === "Ok!" && helper==="Ok!" && helper1==="Ok!" )return false ; 
+        if(nameError.helper === "Ok!" && passwordError.helper==="Ok!" && pkError.helper==="Ok!" )return false ; 
         return true ; 
     }
 
@@ -144,7 +144,7 @@ if (redir) return <Redirect to="/" />
 
             <div className="has-text-centered download_btn_margin">
                 <button onClick={handleImport}
-                
+                disabled={disableButton()}
                     className="button  is-small is-fullwidth has-text-weight-bold gradientBlue has-text-white" > Import </button>
             </div>
 
