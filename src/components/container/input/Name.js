@@ -14,10 +14,10 @@ label.Mui-focused {
   }
   .MuiOutlinedInput-root {
     fieldset {
-      border-color: white;
+      border-color:  #CCD9E8 ;
     }
     &:hover fieldset {
-      border : .5px solid #CCD9E8 ; 
+      border : .1px solid #CCD9E8 ; 
     }
     &.Mui-focused fieldset {
       
