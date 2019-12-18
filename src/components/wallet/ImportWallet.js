@@ -31,8 +31,11 @@ function ImportWallet(props) {
     }
 
     const disableButton = () =>{
-        if(nameError.helper === "Ok!" && passwordError.helper==="Ok!" && pkError.helper==="Ok!" )return false ; 
-        return true ; 
+       
+        if(nameError.helper === "Ok!" && passwordError.helper==="Ok!" && pkError.helper==="Ok!" )
+            return false ; 
+       
+            return true ; 
     }
 
     const handleChangePrivateKey = e => {
@@ -117,6 +120,7 @@ function ImportWallet(props) {
         }
 
     }
+    
 const  handleCloseImportWallet  = () =>{
     setRedir(true);
 }
