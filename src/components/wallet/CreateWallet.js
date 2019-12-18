@@ -134,6 +134,8 @@ function CreateWallet(props) {
                 <p className="is-size-5 is-size-6-mobile has-text-white"> Account </p>
                 <button className="delete" aria-label="delete" onClick={handleClose}></button>
             </div>
+      <div className="box">  
+          
             <div className="message-body">
 
                 <fieldset >
@@ -182,6 +184,7 @@ function CreateWallet(props) {
                     </div>
                 </div>
             </div>
+      </div>
         </article>
         <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} />
 
