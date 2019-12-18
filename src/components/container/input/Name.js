@@ -69,7 +69,7 @@ export default function Name(props) {
         }}
       />
 
-      <FormHelperText error={props.error} >{props.helper}</FormHelperText>
+      <FormHelperText style={{marginBottom:'10px'}}  error={props.error} >{props.helper}</FormHelperText>
 
     </div>
   );
