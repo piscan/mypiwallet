@@ -11,9 +11,6 @@ function ImportWallet(props) {
 
     const [password, setPassword] = useState('');
     const [privateKey, setPrivateKey] = useState('');
-    const [helper, setHelper] = useState('Enter 8 chars as password.');
-    const [helper1, setHelper1] = useState('Enter a valid privateKey');
-    const [helper2, setHelper2] = useState('Enter a name for Wallet');
     const [name, setName] = useState('');
     const [redir  , setRedir] = useState(false); 
     const [nameError , setNameError ] = useState({state : false , helper : ''}); 
