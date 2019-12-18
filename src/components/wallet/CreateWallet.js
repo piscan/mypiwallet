@@ -194,6 +194,8 @@ function CreateWallet(props) {
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
                 <br />
+
+<div className="box"> 
                 <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status} />
 
                 <div style={{ marginLeft: '25px' }}>
@@ -209,7 +211,7 @@ function CreateWallet(props) {
                     </li>
                     </ol>
                 </div>
-
+                </div>
 
             </Container>
 
