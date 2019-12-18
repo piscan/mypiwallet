@@ -198,7 +198,7 @@ function CreateWallet(props) {
         <div className="container">
             <br />
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
-               <div className="box" style={{margin : '20px'}}> 
+               <div className="box" > 
                 <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status} />
 
                 <div style={{ marginLeft: '15px' }}>
