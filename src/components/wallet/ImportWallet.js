@@ -18,16 +18,15 @@ function ImportWallet(props) {
     const [pkError , setPkError] = useState({state:false , helper : ''}); 
 
     const reset =()=>{
+       
         setPassword('') ; 
+     
         setPrivateKey ('');
-        setHelper('Enter 8 chars as password.');
-        setHelper1('Enter a valid privateKey')
-        setHelper2('Enter a name for Wallet') 
+        setNameError({state:false , helper : ''}) ; 
+        setPasswordError({state:false , helper : ''});
+        setPkError({state:false  , helper : ''}); 
+        
         setName('');
-        document.getElementById('helper').classList.remove('is-success'); 
-        document.getElementById('helper1').classList.remove('is-success');
-        document.getElementById('helper2').classList.remove('is-success'); 
- 
     
     }
 
