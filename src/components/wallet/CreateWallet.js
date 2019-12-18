@@ -193,8 +193,6 @@ function CreateWallet(props) {
             <br />
             <Container header="Create Wallet" style={props.style} close={<button onClick={handleCloseCreateWallet} className="delete" aria-label="delete"></button>}>
 
-                <br />
-
 <div className="box"> 
                 <Password value={password} onChange={handleChange} label="Password" helper={helper} error={status} />
 
@@ -211,11 +209,13 @@ function CreateWallet(props) {
                     </li>
                     </ol>
                 </div>
+                <br/>
+                <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} status={password.length >= 8} />
+
                 </div>
 
             </Container>
 
-            <Stepper onNextClick={handleNext} onBackClick={handleBack} activeStep={activeStep} steps={2} status={password.length >= 8} />
 
         </div></>
 
