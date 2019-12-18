@@ -17,7 +17,7 @@ label.Mui-focused {
       border-color:  #CCD9E8;
     }
     &:hover fieldset {
-      border : .1px solid #CCD9E8 ; 
+      border : 1px solid #CCD9E8 ; 
     }
     &.Mui-focused fieldset {
       
